@@ -1,0 +1,59 @@
+<app-header></app-header>
+<ng-container *ngIf="products.length !=0">
+    <div class="container">
+        <div class="card-table">
+            <div class="cart-product">
+                <table class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <th>Sr.No</th>
+                            <th>Название</th>
+                            <th>Изображение</th>
+                            <th>Описание</th>
+                            <th>Цена</th>
+                            <th>Количество</th>
+                            <th>Итого</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of products; let i = index">
+                            <td>{{i+1}}</td>
+                            <td>{{item.name}}</td>
+                            <td><img style="width: 120px;" src="assets/images/tires.svg" alt=""></td>
+                            <td style="width: 25%;">{{item.description}}</td>
+                            <th style="width: 12%;">{{item.price}}</th>
+                            <td style="width: 12%;">{{item.quantity}}</td>
+                            <td style="width: 12%;">{{item.total}}</td>
+                            <td>
+                                <button (click)="removeItem(item)" class="btn btn-danger">Удалить</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"></td>
+                            <td><button (click)="emptycart()" class="btn btn-danger">Очистить корзину</button></td>
+                            <td><button routerLink="/" class="btn btn-primary">Продолжить покупки</button></td>
+                            <td><button routerLink="/checkout"class="btn btn-success" >Детали доставки</button></td>
+                            <td><strong>Общий итог: ${{grandTotal}}</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="products.length ==0">
+    <div class="container">
+        <div class="card">
+            <h5 class="card-title">Корзина</h5>
+        </div>
+        <div class="center">
+            <img src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90" alt="">
+            <h4>Ваша корзина пуста!</h4>
+            <h6>Добавьте товар прямо сейчас</h6>
+            <button routerLink="/" class="btn btn-primary" style="background-color: #f3c94f">Перейти к покупкам</button>
+        </div>
+    </div>
+</ng-container>
+<app-footer></app-footer>

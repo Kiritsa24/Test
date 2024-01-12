@@ -1,0 +1,115 @@
+.container-test {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    
+    .container-test .tabs {
+    display: flex;
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #F3DC61;
+    padding: 0.75rem;
+    border-radius: 99px;
+    }
+    
+    .container-test .tabs * {
+    z-index: 2;
+    }
+    
+    .container-test input[type=radio] {
+    display: none;
+    }
+    
+    .container-test .tab-test {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    font-size: 1.25rem;
+    font-weight: 500;
+    border-radius: 99px;
+    cursor: pointer;
+    transition: color 0.15s ease-in;
+    }
+    
+    .container-test .notification {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    margin-left: 0.75rem;
+    background-color: #e6eef9;
+    transition: 0.15s ease-in;
+    }
+    
+    .container-test input[type=radio]:checked + label {
+    color: #222222;
+    }
+    
+    .container-test input[id=radio-1]:checked ~ .glider {
+    transform: translateX(0);
+    }
+    
+    .container-test input[id=radio-2]:checked ~ .glider {
+    transform: translateX(100%);
+    }
+    
+    
+    .container-test .glider {
+    position: absolute;
+    display: flex;
+    height: 30px;
+    width: 200px;
+    background-color: #F3DC61;
+    z-index: 1;
+    border-radius: 99px;
+    transition: 0.25s ease-out;
+    }
+    
+    .delivery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    }
+    
+    .form-delivery {
+    display: flex;
+    flex-direction: column;
+    }
+    
+    .form-delivery .form-group {
+    display: flex;
+    flex-direction: column-reverse;
+    }
+    
+    .form-delivery input {
+    border: none;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    border-bottom: 0.1rem solid #bdbdbd;
+    outline: none;
+    }
+    
+    .form-delivery label {
+    padding-left: 1rem;
+    color: #bdbdbd;
+    transform: translateY(2.8rem);
+    transform-origin: left top;
+    cursor: text;
+    transition: all 0.3s;
+    }
+    
+    .form-delivery input:focus,
+    .form-delivery input:not(:placeholder-shown) {
+    border-bottom: 0.1rem solid #F3DC61;
+    }
+    
+    .form-delivery input:focus ~ label,
+    .form-delivery input:not(:placeholder-shown) ~ label {
+    padding: 0;
+    color: #212121;
+    transform: translateY(1.6rem) scale(0.8);
+    }
+    

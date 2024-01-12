@@ -1,0 +1,64 @@
+<div class="container" [ngClass]="{ 'active': isSignUpActive }">
+    <div class="form-container sign-up">
+      <form [formGroup] = "userData" (ngSubmit)="onSubmit()">
+        <h1>Создать аккаунт</h1>
+        <div class="social-icons">
+          <a href="#" class="icon"><img class="fa-brands fa-google-plus-g" src="assets/images/linkedin.svg"></a>
+          <a href="#" class="icon"><img class="fa-brands fa-google-plus-g" src="assets/images/microsoft.svg"></a>
+          <a href="#" class="icon"><img class="fa-brands fa-google-plus-g" src="assets/images/google.svg"></a>
+          <a href="#" class="icon"><img class="fa-brands fa-google-plus-g" src="assets/images/github.svg"></a>
+        </div>
+        <span>Используйте свою почту для регистрации</span>
+        <input type="text" placeholder="Имя">
+        <input required type="email" placeholder="Эл. почта" formControlName="email" required>
+        <div *ngIf="userData.controls['email'].invalid && (userData.controls['email'].dirty || userData.controls['email'].touched)" class="red-text">
+          <div *ngIf="userData.controls['email'].hasError('required')">Электронная почта обязательна</div>
+          <div *ngIf="userData.controls['email'].hasError('email')">Введите действительную Электронную почту</div>
+        </div>
+        <input type="password" placeholder="Пароль" formControlName="password" required>
+        <div *ngIf="userData.controls['password'].invalid && (userData.controls['password'].dirty || userData.controls['password'].touched)" class="red-text">
+          <div *ngIf="userData.controls['password'].hasError('required')">Пароль обязателен</div>
+          <div *ngIf="userData.controls['password'].hasError('minlength')"> Минимальная длина пароля {{ userData.controls['password'].getError('minlength').requiredLength }} символов</div>
+        </div>
+        <button [disabled]="!userData.valid">Зарегистрироваться </button>
+      </form>
+    </div>
+    <div class="form-container sign-in">
+      <form [formGroup] = "userData" (ngSubmit)="onSubmit()">
+        <h1>Войти</h1>
+        <div class="social-icons">
+          <a href="#" class="icon"><img class="fa-brands fa-google-plus-g" src="assets/images/linkedin.svg"></a>
+          <a href="#" class="icon"><img class="fa-brands fa-google-plus-g" src="assets/images/microsoft.svg"></a>
+          <a href="#" class="icon"><img class="fa-brands fa-google-plus-g" src="assets/images/google.svg"></a>
+          <a href="#" class="icon"><img class="fa-brands fa-google-plus-g" src="assets/images/github.svg"></a>
+        </div>
+        <span>or use your email password</span>
+        <input required type="email" placeholder="Эл. почта" formControlName="email" required>
+        <div *ngIf="userData.controls['email'].invalid && (userData.controls['email'].dirty || userData.controls['email'].touched)" class="red-text">
+          <div *ngIf="userData.controls['email'].hasError('required')">Электронная почта обязательна</div>
+          <div *ngIf="userData.controls['email'].hasError('email')">Введите действительную Электронную почту</div>
+        </div>
+        <input type="password" placeholder="Пароль" formControlName="password" required>
+        <div *ngIf="userData.controls['password'].invalid && (userData.controls['password'].dirty || userData.controls['password'].touched)" class="red-text">
+          <div *ngIf="userData.controls['password'].hasError('required')">Пароль обязателен</div>
+          <div *ngIf="userData.controls['password'].hasError('minlength')"> Минимальная длина пароля {{ userData.controls['password'].getError('minlength').requiredLength }} символов</div>
+        </div>    
+        <a href="#">Забыли свой пароль?</a>
+        <button [disabled]="!userData.valid">Войти</button>
+      </form>
+    </div>
+    <div class="toggle-container">
+      <div class="toggle" (click)="toggleForm()">
+        <div class="toggle-panel toggle-left">
+          <h1>Добро пожаловать!</h1>
+          <p>Введите свои личные данные, чтобы использовать все функции сайта</p>
+          <button class="hidden" id="login">Войти</button>
+        </div>
+        <div class="toggle-panel toggle-right">
+          <h1>Добро пожаловать!</h1>
+          <p>Зарегистрируйтесь, указав свои личные данные, чтобы использовать все функции сайта.</p>
+          <button class="hidden" id="register">Зарегистрироваться</button>
+        </div>
+      </div>
+    </div>
+  </div>

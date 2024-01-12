@@ -1,0 +1,119 @@
+<div class="container">
+    <div class="row">
+      <div *ngFor="let item of filterCategory | filter:searchKey:'title'" class="col-xl-3 col-6" style="margin-bottom: 10px">
+        <div class="container px-0">
+          <div class="cell-content_main">
+            <div class="row">
+              <div class="col-12 d-flex justify-content-sm-between" style="position: relative;">
+                <img alt="" src="assets/images/sun.svg" class="cell-content_main-sun m-0 sun-absolute">
+                <a href="/product/11953" class="mx-auto">
+                  <img alt="" src="assets/images/tires.svg" class="cell-content_main-tires">
+                </a>
+                <div class="d-none d-sm-flex flex-column cell-content_margin m-0" style="position:absolute; top:18px; right:30px">
+                  <button class="">
+                    <svg class="" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M19.8325 7.825L15.5925 3.585C14.8125 2.805 13.5425 2.805 12.7625 3.585L9.2825 7.055C9.0825 7.255 8.5625 7.475 8.2725 7.475L4.5425 7.515C3.5725 7.525 3.2325 8.095 3.1325 8.345C3.0325 8.595 2.8725 9.245 3.5525 9.935L7.8025 14.185L3.2925 18.695C2.9025 19.085 2.9025 19.715 3.2925 20.105C3.4925 20.305 3.7425 20.395 4.0025 20.395C4.2625 20.395 4.5125 20.295 4.7125 20.105L9.2225 15.595L13.4725 19.845C13.8825 20.255 14.2725 20.365 14.5825 20.365C14.7925 20.365 14.9625 20.315 15.0625 20.275C15.3125 20.175 15.8925 19.835 15.9025 18.855L15.9425 15.125C15.9425 14.835 16.1625 14.315 16.3625 14.115L19.8325 10.645C20.6025 9.865 20.6025 8.605 19.8325 7.825ZM14.9425 12.705C14.3625 13.285 13.9425 14.295 13.9325 15.105L13.9125 17.455L5.9525 9.495L8.3025 9.475C9.1125 9.465 10.1225 9.045 10.7025 8.465L14.1725 4.995L18.4125 9.235L14.9425 12.705Z" fill="#222222"></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="row cell-content_second-text">
+              <p class="p-0 mb-0">
+                <a href="/product/11953" style="color: #2B2D33;">{{ item.name }}</a>
+              </p>
+            </div>
+            <div class="row position-rating mb-1">
+              <div class="col px-0 d-flex">
+                <div class="p-0 my-auto">
+                  <div style="width: 0; height: 0;">
+                    <svg style="width: 0; height: 0;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                      <defs>
+                        <linearGradient id="half" x1="0" x2="100%" y1="0" y2="0">
+                          <stop offset="50%" stop-color="#FDDB28"></stop>
+                          <stop offset="50%" stop-color="#D6D6D6"></stop>
+                        </linearGradient>
+                        <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="star">
+                          <path d="M31.547 12a.848.848 0 00-.677-.577l-9.427-1.376-4.224-8.532a.847.847 0 00-1.516 0l-4.218 8.534-9.427 1.355a.847.847 0 00-.467 1.467l6.823 6.664-1.612 9.375a.847.847 0 001.23.893l8.428-4.434 8.432 4.432a.847.847 0 001.229-.894l-1.615-9.373 6.822-6.665a.845.845 0 00.214-.869z"></path>
+                        </symbol>
+                      </defs>  
+                    </svg>
+                  </div>
+                  <p class="star-rating-star my-auto" aria-label="4.5 stars out of 5">
+                    <svg class="c-star-star active-star" width="32" height="32" viewBox="0 0 32 32">
+                      <use xlink:href="#star"></use>
+                    </svg>
+                    <svg class="c-star-star active-star" width="32" height="32" viewBox="0 0 32 32">
+                      <use xlink:href="#star"></use>
+                    </svg>
+                    <svg class="c-star-star active-star" width="32" height="32" viewBox="0 0 32 32">
+                      <use xlink:href="#star"></use>
+                    </svg>
+                    <svg class="c-star-star active-star" width="32" height="32" viewBox="0 0 32 32">
+                      <use xlink:href="#star" fill="url(#half)"></use>
+                    </svg>
+                    <svg class="c-star-star " width="32" height="32" viewBox="0 0 32 32">
+                      <use xlink:href="#star"></use>
+                    </svg>
+                  </p>
+                </div>
+                <div class="ms-3 my-auto">
+                  <p class="mb-0 average-rating">3.4</p>
+                </div>
+                <div class="p-0 ms-0 my-auto ms-sm-auto position-relative">
+                  <div class="total-count">
+                    <p class="mb-0">{{ item.count }}шт.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row position-rating mt-1">
+              <div class="col-12 px-0 mb-2 d-none d-sm-flex">
+                <p class="my-auto reviews">Отзывы (4)</p>
+                <div class="my-auto ms-auto">
+                  <p class="main-price ms-auto mb-0">₽{{ item.price}}</p>
+                </div>
+              </div>
+              <div class="col-12 p-0 d-none d-sm-block">
+                <button class="button-basket_main d-none d-sm-block p-0 w-100" (click)=addToCart(item) >
+                  <img alt="" src="assets/images/basket.svg" class="mr-2">
+                  Корзина
+                </button>
+                <button class="button-basket_main-mobile d-sm-none p-0">
+                </button>
+              </div>
+              <div class="col-12 px-0 d-sm-none">
+                <div class="row ">
+                  <div class="col-6 pe-2">
+                    <button class="btn-mobile">
+                    </button>
+                  </div>
+                  <div class="col-6 ps-2">
+                    <button class="btn-mobile">
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 px-0 mt-2 d-sm-none">
+                <div class="row">
+                  <div class="col-12 d-flex mb-2 align-self-center">
+                    <p class="main-price ms-auto my-auto">24466,62<!--!-->₽</p>
+                  </div>
+                  <div class="col-12">
+                    <button class="button-basket_main d-none d-sm-block p-0 w-100">
+                    </button>
+                    <button class="button-basket_main-mobile d-sm-none p-0">
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+
